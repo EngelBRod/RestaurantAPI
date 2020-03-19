@@ -3,6 +3,7 @@ const Schema= mongoose.Schema;
 require('mongoose-currency').loadType(mongoose);
 const Currency = mongoose.Types.Currency;
 
+//CREATING SCHEMA
 const dishSchema = new Schema({
     
     name:{
@@ -21,6 +22,7 @@ const dishSchema = new Schema({
     timestamps:true
 });
 
+//CREATING MODEL FROM SCHEMA
 const Dishes= mongoose.model('Dish',dishSchema)
 
 module.exports = Dishes

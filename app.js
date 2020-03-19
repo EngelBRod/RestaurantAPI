@@ -13,7 +13,7 @@ var mongoose= require('mongoose');
 var Dishes = require('./models/dishes');
 
 var url = process.env.DB_CONN;
-var connect =mongoose.connect('mongodb://localhost:27017/restaurantServer');
+var connect =mongoose.connect(url);
 
 connect
 .then((db)=>{
@@ -22,14 +22,10 @@ connect
 
 var app = express();
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//   next();
-// });
+
 app.use(cors());
 
-// view engine setup
+// VIEW ENGINE SETUP
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
